@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <h1>Product Entry</h1>
     <form action="productEntry" method="post">
         <table>
             <tr>
