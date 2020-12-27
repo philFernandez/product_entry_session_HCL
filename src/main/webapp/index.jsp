@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Entry</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
@@ -22,8 +23,11 @@
                 <td><input type="text" name="quantity"></td>
             </tr>
         </table>
+        <br><br>
         <button type="submit">Submit</button>
     </form>
+    <br><br>
+    <a href="showNewProduct.jsp"><button>Product List</button></a>
 </body>
 </html>
 
