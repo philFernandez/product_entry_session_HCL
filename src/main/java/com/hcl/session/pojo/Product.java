@@ -4,18 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Product {
-    private int id;
+    private static int count = 0;
+    private final int id;
     private String name;
     private double price;
     private int quantity;
     final private static List<Product> products = new ArrayList<>();
 
     public Product() {
+        count ++;
+        id = count;
         products.add(this);
     }
 
-    public Product(int id, String name, double price, int quantity) {
-        this.id = id;
+    public Product(String name, double price, int quantity) {
+        count ++;
+        id = count;
         this.name = name;
         this.price = price;
         this.quantity = quantity;
@@ -32,10 +36,6 @@ public class Product {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {

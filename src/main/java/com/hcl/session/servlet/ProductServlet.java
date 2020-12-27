@@ -17,17 +17,12 @@ public class ProductServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
-        int id = Integer.parseInt(request.getParameter("id"));
         String name = request.getParameter("name");
         double price = Double.parseDouble(request.getParameter("price"));
         int quantity = Integer.parseInt(request.getParameter("quantity"));
-        new Product(id, name, price, quantity);
+        new Product(name, price, quantity);
         HttpSession session = request.getSession();
 
-        // session.setAttribute("id", newProduct.getId());
-        // session.setAttribute("name", newProduct.getName());
-        // session.setAttribute("price", String.format("%.2f", newProduct.getPrice()));
-        // session.setAttribute("quantity", newProduct.getQuantity());
         session.setAttribute("products", Product.getProducts());
 
         response.sendRedirect("showNewProduct.jsp");

@@ -10,10 +10,6 @@
     <form action="productEntry" method="post">
         <table>
             <tr>
-                <td>Product ID</td>
-                <td><input type="text" name="id"></td>
-            </tr>
-            <tr>
                 <td>Product Name</td>
                 <td><input type="text" name="name"></td>
             </tr>
