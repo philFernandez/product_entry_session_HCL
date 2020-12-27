@@ -23,7 +23,12 @@ public class ProductServlet extends HttpServlet {
         int quantity = Integer.parseInt(request.getParameter("quantity"));
         Product newProduct = new Product(id, name, price, quantity);
         HttpSession session = request.getSession();
-        session.setAttribute("newProduct", newProduct);
+
+        session.setAttribute("id", newProduct.getId());
+        session.setAttribute("name", newProduct.getName());
+        session.setAttribute("price", String.format("%.2f", newProduct.getPrice()));
+        session.setAttribute("quantity", newProduct.getQuantity());
+
         response.sendRedirect("showNewProduct.jsp");
     }
 }

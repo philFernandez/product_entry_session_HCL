@@ -18,10 +18,10 @@
             <th>Product Quantity</th>
         </tr>
         <tr>
-            <td>"${newProduct.getId()}"</td>
-            <td>"${newProduct.getName()}"</td>
-            <td>"${newProduct.getPrice()}"</td>
-            <td>"${newProduct.getQuantity()}"</td>
+            <td>${id}</td>
+            <td>${name}</td>
+            <td>$${price}</td>
+            <td>${quantity}</td>
         </tr>
     </table>
 </body>
