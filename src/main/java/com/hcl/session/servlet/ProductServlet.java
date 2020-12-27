@@ -27,7 +27,7 @@ public class ProductServlet extends HttpServlet {
             session.setAttribute("products", Product.getProducts());
             response.sendRedirect("showNewProduct.jsp");
 
-        } catch (NullPointerException | NumberFormatException e) {
+        } catch (Exception e) {
             throw new ServletException(e);
         }
     }
