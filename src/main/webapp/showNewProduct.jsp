@@ -42,6 +42,8 @@
             <h1>Product Table is Empty</h1>
         </c:otherwise>
     </c:choose>
+    <br>
+    <a href="index.jsp"><button>Add Product</button></a>
 </body>
 
 </html>
