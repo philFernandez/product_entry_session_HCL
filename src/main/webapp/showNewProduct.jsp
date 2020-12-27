@@ -26,7 +26,7 @@
                     <c:out value="${product.getName()}" />
                 </td>
                 <td>
-                    <c:out value="${product.getPrice()}" />
+                    <c:out value="${product.getFormattedPrice()}" />
                 </td>
                 <td>
                     <c:out value="${product.getQuantity()}" />

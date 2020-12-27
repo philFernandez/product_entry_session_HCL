@@ -22,6 +22,10 @@ public class Product {
         products.add(this);
     }
 
+    public String getFormattedPrice() {
+        return "$" + String.format("%.2f", price);
+    }
+
     public static List<Product> getProducts() {
         return products;
     }
