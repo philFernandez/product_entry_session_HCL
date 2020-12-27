@@ -21,13 +21,14 @@ public class ProductServlet extends HttpServlet {
         String name = request.getParameter("name");
         double price = Double.parseDouble(request.getParameter("price"));
         int quantity = Integer.parseInt(request.getParameter("quantity"));
-        Product newProduct = new Product(id, name, price, quantity);
+        new Product(id, name, price, quantity);
         HttpSession session = request.getSession();
 
-        session.setAttribute("id", newProduct.getId());
-        session.setAttribute("name", newProduct.getName());
-        session.setAttribute("price", String.format("%.2f", newProduct.getPrice()));
-        session.setAttribute("quantity", newProduct.getQuantity());
+        // session.setAttribute("id", newProduct.getId());
+        // session.setAttribute("name", newProduct.getName());
+        // session.setAttribute("price", String.format("%.2f", newProduct.getPrice()));
+        // session.setAttribute("quantity", newProduct.getQuantity());
+        session.setAttribute("products", Product.getProducts());
 
         response.sendRedirect("showNewProduct.jsp");
     }

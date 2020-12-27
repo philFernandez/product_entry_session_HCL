@@ -12,17 +12,27 @@
         <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <table border="1" cellpadding="5">
         <tr>
-            <th>Product ID</th>
+            <th>ID</th>
             <th>Product Name</th>
-            <th>Product Price</th>
-            <th>Product Quantity</th>
+            <th>Price</th>
+            <th>Quantity</th>
         </tr>
-        <tr>
-            <td>${id}</td>
-            <td>${name}</td>
-            <td>$${price}</td>
-            <td>${quantity}</td>
-        </tr>
+        <c:forEach var="product" items="${products}">
+            <tr>
+                <td>
+                    <c:out value="${product.getId()}" />
+                </td>
+                <td>
+                    <c:out value="${product.getName()}" />
+                </td>
+                <td>
+                    <c:out value="${product.getPrice()}" />
+                </td>
+                <td>
+                    <c:out value="${product.getQuantity()}" />
+                </td>
+            </tr>
+        </c:forEach>
     </table>
 </body>
 

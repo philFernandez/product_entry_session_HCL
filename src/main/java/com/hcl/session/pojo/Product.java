@@ -1,12 +1,17 @@
 package com.hcl.session.pojo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Product {
     private int id;
     private String name;
     private double price;
     private int quantity;
+    final private static List<Product> products = new ArrayList<>();
 
     public Product() {
+        products.add(this);
     }
 
     public Product(int id, String name, double price, int quantity) {
@@ -14,6 +19,11 @@ public class Product {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
+        products.add(this);
+    }
+
+    public static List<Product> getProducts() {
+        return products;
     }
 
     public int getId() {
