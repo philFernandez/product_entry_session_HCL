@@ -1,6 +1,7 @@
 package com.hcl.session.servlet;
 
 import java.io.IOException;
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,15 +17,18 @@ public class ProductServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws IOException {
-        String name = request.getParameter("name");
-        double price = Double.parseDouble(request.getParameter("price"));
-        int quantity = Integer.parseInt(request.getParameter("quantity"));
-        new Product(name, price, quantity);
-        HttpSession session = request.getSession();
+            throws IOException, ServletException {
+        try {
+            String name = request.getParameter("name");
+            double price = Double.parseDouble(request.getParameter("price"));
+            int quantity = Integer.parseInt(request.getParameter("quantity"));
+            new Product(name, price, quantity);
+            HttpSession session = request.getSession();
+            session.setAttribute("products", Product.getProducts());
+            response.sendRedirect("showNewProduct.jsp");
 
-        session.setAttribute("products", Product.getProducts());
-
-        response.sendRedirect("showNewProduct.jsp");
+        } catch (NullPointerException | NumberFormatException e) {
+            throw new ServletException(e);
+        }
     }
 }
